@@ -21,8 +21,35 @@ class NumericalSystems{
     }
 
     digitToBinary(digit){
-        return("Test Word");
+        return (digit >>> 0).toString(2);
     }
+
+    addBinary(binary1, binary2){
+        return this.digitToBinary(this.binaryToDigit(binary1) + this.binaryToDigit(binary2));
+    }
+
+    bitCombination(bits){
+        return ((2**bits));
+    }
+
+    digitToHex(digit){
+        digit = parseInt(digit);
+        return (digit.toString(16));
+    }
+
+    hexToDigit(hex){
+        return (parseInt(hex, 16));
+    }
+
+    digitToOctal(digit){
+        digit = parseInt(digit);
+        return ((digit).toString(8)); 
+    }
+
+    octalToDigit(octal){
+        return (parseInt(octal, 8));
+    }
+
 
 }
 
