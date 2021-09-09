@@ -11,17 +11,11 @@ class DigitalSystems{
     constructor(){}
 
     binaryToDigit(binary){
-        let value = 0;
-
-        //Checks every digit in the string, if '1' then 2 is raised to the power of its position
-        for(let i = binary.length-1; i>=0; i--){
-            value += (binary[i] * 2**(-1*(i - binary.length + 1))); // -1*(i - binary.length + 1) checks for the current position starting from the right.
-        }
-        return value;
+        return parseInt(binary, 2);
     }
 
     digitToBinary(digit){
-        return (digit >>> 0).toString(2);
+        return (digit).toString(2);
     }
 
     addBinary(binary1, binary2){
@@ -29,7 +23,9 @@ class DigitalSystems{
     }
 
     subtractBinary(binary1, binary2){
-        return this.digitToBinary(parseInt(this.binaryToDigit(binary1)) - parseInt(this.binaryToDigit(binary2)));
+        let y = (this.binaryToDigit(binary1)) - (this.binaryToDigit(binary2));
+        console.log("Binary1: " + this.binaryToDigit(binary1) + " Binary2: " + this.binaryToDigit(binary2) + " Y: " + y);
+        return this.digitToBinary(y);
     }
 
     bitCombination(bits){

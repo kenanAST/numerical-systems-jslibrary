@@ -26,4 +26,4 @@ console.log(ns.hexToDigit("9B3F"));
 console.log(ns.binaryDiminishedRadixCompliment("1100001111011111"));
 console.log(ns.diminishedRadixCompliment("25000000", 10));
 console.log(ns.binaryDiminishedRadixCompliment("11111111", 2));
-console.log(ns.subtractBinary("100001001", "100111000"));
+console.log(ns.subtractBinary("100001001", "10011100"));
