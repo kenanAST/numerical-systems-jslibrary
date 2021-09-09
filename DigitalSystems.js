@@ -6,7 +6,7 @@
 // 2 1 3
 // 3 - 
 
-class NumericalSystems{
+class DigitalSystems{
 
     constructor(){}
 
@@ -26,6 +26,10 @@ class NumericalSystems{
 
     addBinary(binary1, binary2){
         return this.digitToBinary(this.binaryToDigit(binary1) + this.binaryToDigit(binary2));
+    }
+
+    subtractBinary(binary1, binary2){
+        return this.digitToBinary(parseInt(this.binaryToDigit(binary1)) - parseInt(this.binaryToDigit(binary2)));
     }
 
     bitCombination(bits){
@@ -50,7 +54,36 @@ class NumericalSystems{
         return (parseInt(octal, 8));
     }
 
+    invertBinary(binary){
+        let inverse = ''
+        for(let i = 0; i<binary.length; i++){
+            if(binary[i] == 0){
+                inverse += 1
+            }
+            else{
+                inverse += 0;
+            }
+        }
+        return inverse;
+    }
+
+    binaryDiminishedRadixCompliment(digit){
+        return this.invertBinary(digit);
+    }
+
+    binaryRadixCompliment(digit){
+        return this.addBinary(this.invertBinary(digit), "1");
+    }
+
+    diminishedRadixCompliment(digit, r){
+        return parseFloat(((r**digit.length) - 1) - digit);
+    }
+
+    radixCompliment(digit, r){
+        return parseFloat(((r**digit.length)) - digit);
+    }
+
 
 }
 
-module.exports = NumericalSystems;
+module.exports = DigitalSystems;
